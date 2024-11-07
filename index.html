@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="port.css">
+   <style>
+    nav{
+      display: flex;
+      color: #ecf3ed;
+      list-style:None ;
+      justify-content: space-around;
+      align-items: center;
+    }
+   nav li{
+    padding: 10px;
+    margin-top: 10px;
+    justify-content: space-between;
+    background-color: #666;
+    border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   }
+   nav h1{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   }
+   nav li:hover{
+    background-color: #7cf03d;
+    color: #000;
+    padding: 10px;
+    border-radius:  9px;
+    transition: 1s ;
+     box-shadow: 5px;
+   }
+   nav h1:hover{
+    background-color: #7cf03d;
+    color: black;
+    border-radius: 10px;
+    transition:1s ;
+   }
+   .home {
+    display: flex;  
+    align-items: center;
+    height: 100vh;
+    padding: 60px 9% 0;
+    color: #fff;
+}
+
+.home-info h1 {
+    font-size: 55px;
+}
+
+.home-info h2 {
+    font-size: 32px;
+    margin-top: -10px;
+}
+
+.home-info p {
+    font-size: 10px;
+    margin: 10px 0 25px;
+}
+
+.home-info .btn-sci {
+    display: flex;
+    align-items: center;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: #7cf03d;
+    border: 2px solid #7cf03d;
+    border-radius: 0 0 10px #7cf03d;
+    font-size: 16px;
+    color: #1f242d;
+    font-weight: 600;
+}
+
+.btn:hover { /* Fixed the selector */
+    background: transparent;
+    color: #7cf03d;
+    box-shadow: none;
+}
+
+.home-info .btn-sci .sci {
+    margin-left: 20px;
+}
+
+.home-info .btn-sci .sci a {
+    display: inline-flex;
+    padding: 8px;
+    border: 2px solid #7cf03d;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #7cf03d;
+    margin: 0 8px;
+    transition: .5s;
+}
+.home-info .btn-sci .sci a:hover { /* Fixed the selector */
+    background: #7cf03d;
+    color: #1f242d;
+    box-shadow: 0 0 10px #7cf03d;
+}
+
+.home-img .img-box {
+    position: relative;
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.home-img .img-box {
+    position: relative; /* Ensure the parent is positioned */
+}
+.home-img .img-box::before,
+.home-img .img-box::after { 
+    content: '';
+    position: absolute;
+    width: 100%; /* Use 100% to fit the parent */
+    height: 100%; /* Set height to match */
+    top: 0; /* Position at the top */
+    left: 0; /* Position at the left */
+    background: conic-gradient(transparent, transparent, transparent, #7cf03d);  
+    z-index: 0; /* Adjust z-index if needed */
+    pointer-events: none; /* Allow clicks to pass through */
+    transform: rotate(0deg);
+    animation: rotate-border 10s linear infinite; /* Corrected 'liner' to 'linear' */
+}
+
+@keyframes rotate-border {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.home-img .img-box .img-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #1f242d;
+    border-radius: 50%;
+    border: .1px solid #1f242d;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+}
+.bars-animation .bar {
+    width: 100%;
+    height: 20px; /* Set a specific height for each bar */
+    background: #1f242d;
+    margin: 2px 0; 
+    transform: translateY(-100%);
+    animation: show-bars .5s ease-in-out-forwards;
+    animation-delay: calc(.1s * var(--i));
+}
+@keyframes show-bars{
+   100% {
+    transform: translateY(0%);
+   }
+}
+.about{
+    background: #1f242d;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+#about .about-image {
+    width: 150px; /* adjust the width to your liking */
+    height: 150px; /* adjust the height to your liking */
+    border-radius: 50%; /* makes the image circular */
+    margin: 20px auto; /* centers the image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #1f242d;
+}
+.about {
+    background-color: #262525;
+    padding: 50px 0;
+  }
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .about-image {
+    flex-basis: 30%;
+    margin: 20px;
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .about-content {
+    flex-basis: 60%;
+    margin: 20px;
+  }
+  
+  .about-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #fff;
+  }
+  .about-content h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .heading span {
+    color: #337ab7;
+  }
+  
+  .btn-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .btn-container button {
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .btn-container button:hover {
+    background-color: #23527c;
+  }
+  .project {
+    background-color: #262525;
+    padding: 50px 0;
+  }
+  .project-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .project-box {
+    flex-basis: 25%;
+    margin: 20px;
+    background-color: #ecd2d2;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-box img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .project-box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .project-box p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .project-link {
+    text-decoration: none;
+    color: #337ab7;
+    font-size: 18px;
+  }
+  
+  .project-link:hover {
+    color: #23527c;
+  }
+  
+  @media (max-width: 768px) {
+    .project-box {
+      flex-basis: 50%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .project-box {
+      flex-basis: 100%;
+    }
+  }
+  .download-resume {
+    background-color: #262525;
+    padding: 50px 0;
+  }
+  .download-resume-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #fff;
+  }
+  
+  .download-resume-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .download-button {
+    text-align: center;
+  }
+  
+  .download-button a {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .download-button a:hover {
+    background-color: #23527c;
+  }
+  .contact {
+    background-color: #262525;
+    padding: 50px 0;
+  }
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .contact-left {
+    flex-basis: 30%;
+    margin: 20px;
+  }
+  
+  .contact-right {
+    flex-basis: 60%;
+    margin: 20px;
+  }
+  
+  .contact-left h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #3877FF;
+  }
+  
+  .contact-left p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .contact-right form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .contact-right input, .contact-right textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .contact-right textarea {
+    height: 100px;
+  }
+  
+  .contact-right button[type="submit"] {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .wdw{
+    color: white;
+    display:flex ;
+  }
+  .contact-right button[type="submit"]:hover {
+    background-color: #23527c;
+  }
+  /* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color:#1f242d;
+}
+
+/* Section Styles */
+
+.work {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #1f242d;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.work h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.work h1 span {
+  color: #007bff;
+}
+
+.work h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Box Container Styles */
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Box Styles */
+
+.box {
+  flex-basis: 45%;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f2d2d2;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.box h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.box p {
+  font-size: 16px;
+  color: #666;
+}
+.adw{
+  color: white;
+ position: relative;
+ left: -770px;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .box {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .work {
+    margin: 20px auto;
+  }
+  .box {
+    margin: 10px;
+    padding: 10px;
+  }
+}
+
+   </style>
+</head>
+<body>
+
+    <nav>
+      <h1>Portfolio</h1>
+      <li>Home</li>
+      <li>About</li>
+      <li>Skills</li>
+      <li>Projects</li>
+      <li>Contact</li>
+       
+    </nav>
+    <div class="bras-animation">
+        <div class="bar" style="--i:6;" ></div>
+        <div class="bar" style="--i:5;" ></div>
+        <div class="bar" style="--i:4;" ></div>
+        <div class="bar" style="--i:3;" ></div>
+        <div class="bar" style="--i:2;" ></div>
+        <div class="bar" style="--i:1;" ></div>
+    </div>
+    <section class="home">
+        <div class="home-info">
+            <h1>Riya Pandey</h1>
+            <h2>I'm a Web Devolper</h2>
+            <p>         
+I’m a dedicated and innovative web developer with a passion for creating dynamic, user-focused web applications. With a solid foundation in front-end technologie, I bring ideas to life by merging functionality with intuitive design. My expertise spans across HTML, CSS . I have a keen eye for detail and take pride in writing clean, scalable code
+              <div class="btn-sci">
+                <a href="#" class="btn">Hire Me</a>
+                <div class="sci">
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-codepen'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="home-img">
+            <div class="img-box">
+            <div class="img-item">
+                <img src="riya.jpg" alt="">
+                
+             </div>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <u style="color: #fff;">
+        <h1 class="heading">About <span>Me</span></h1>
+    </u>
+        <div class="about-container">
+          <div class="about-image">
+            <img src="riya.jpg height="400px" width="250px""  alt="About Image" >
+          </div>
+          <div class="about-content">
+            <p>Hello! I'm Riya Pandey, a passionate and dedicated web developer with a strong passion for building innovative and dynamic web applications. With a solid foundation in HTML, CSS, JavaScript, and various frameworks, I strive to create visually appealing and user-friendly interfaces that provide exceptional user experiences.</p>
+            <p>As a web developer, I'm constantly learning and staying up-to-date with the latest trends and technologies to ensure that my skills are always current and relevant. My expertise includes front-end development, responsive web design, web application development, and website maintenance.</p>
+            <p>In my free,I enjoy experimenting with new technologies, contributing to open-source projects, and participating in online communities to stay connected with other developers and learn from their experiences.</p>
+            <p>If you're looking for a dedicated and skilled web developer who can bring your vision to life, let's get in touch! I'd love to discuss how I can help you achieve your goals.</p>
+            <div class="btn-container">
+              <button>Contact Me</button>
+            </div>
+          </div>
+        </div>
+      </section>
+       <section class="work" id="work">
+          <u style="color: #Fff;"> 
+        <h1 class="heading">My <span>Skills</span></h1>
+        </u>
+        <h2 class="wdw">Web Devlopment Work</h2>
+        <div class="box-container" style="display: flex; flex-wrap: wrap; justify-content: center;">
+            <br>
+            <br>
+                <div class="box">
+                    <h4>Frontend Devlopment</h4>
+                    <p>As a frontend developer, I specialize in building responsive, user-friendly, and interactive web applications using HTML, CSS, and JavaScript.</p>
+                </div>
+        
+                <div class="box">
+                    <h4>Responsive Web Design</h4>
+                    <p>As a web developer, I understand the importance of creating websites that are accessible and usable on a wide range of devices, from small smartphones to large desktop monitors. My responsive web design services ensure that your website adapts to different screen sizes, devices, and orientations.</p>
+                </div>
+        
+                <div class="box">
+                    <h4>Web Application Devlopment</h4>
+                    <p>Web application development is the process of creating software applications that are designed to be accessed and used through web browsers. It involves the creation of application programs that reside on remote servers and are delivered to the user's device over the internet.</p>
+                </div>
+                <h2 class="adw">Additional Work</h2>
+                <div class="box">
+                    <h4>Website Maintenance</h4>
+                    <p>Website maintenance is the process of regularly updating and checking a website to ensure it remains relevant, secure, and functional. It involves a range of activities, including updating content, fixing broken links, improving performance, and enhancing security.</p>
+                </div>
+        
+                <div class="box">
+                    <h4>Website Redesign</h4>
+                    <p>Website redesign is the process of revamping an existing website to improve its functionality, user experience, and overall performance. It involves a thorough analysis of the current website, identifying areas for improvement, and implementing changes to create a more modern, efficient, and effective online presence.</p>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+    <section class="project" id="project">
+        <u style="color: #f3dfdf;">
+        <h1 class="heading">My <span>Projects</span></h1>
+    </u>
+        <div class="project-container">
+          <div class="project-box">
+            <img src="age.jpg" alt="Project 1">
+            <h2> Calculator</h2>
+            <p>Our versatile calculator is designed to handle all your basic calculation needs. From simple arithmetic operations like addition, subtraction, multiplication, and division to more complex functions, this tool provides accurate results instantly. Perfect for students, professionals, or anyone needing quick calculations. Easy to use, efficient, and reliable, it’s your go-to tool for all math problems!</p>
+            <a href="https://github.com/Riya125pandey/Calculator" class="project-link">View Project</a>
+          </div>
+          <div class="project-box">
+            <img src="C:\Users\ASUS\Desktop\codesoft\landing page" alt="Project 2">
+            <h2>Landing Page</h2>
+            <p>Landing Page Of Event Planning Website</p>   
+            <a href="https://github.com/Riya125pandey/Landing-Page.git" class="project-link">View Project</a>
+          </div>
+          
+          <div class="project-box">
+            <img src="C:\Users\ASUS\Desktop\codesoft\netflix.html" alt="Project 3">
+            <h2>Netflix</h2>
+            <p>Netflix is gearing up for the holiday season with a lineup of Christmas-themed content, starting with Meet Me Next Christmas, a romantic comedy released on November 6. Starring Christina Milian and Kofi Siriboe, this film follows Layla’s journey through New York City to win the heart of her dream guy at a sold-out Christmas concert. Each Wednesday throughout November, Netflix will release another Christmas movie, including titles like Hot Frosty, The Merry Gentlemen, and Our Little Secret. In December, Netflix will debut a new animated holiday film and a special musical featuring Sabrina Carpenter</p>        
+                <a href="https://github.com/Riya125pandey/Netflix.git" class="project-link">View Project</a>
+          </div>
+        </div>
+      </section>
+      <section class="download-resume" id="download-resume">
+        <u style="color: #Fff;">
+        <h1 class="heading">Download My <span>Resume</span></h1>
+        </u>
+        <div class="download-resume-container">
+            <p>Download my resume to learn more about my skills, experience, and education. My resume is available in PDF format and can be easily downloaded by clicking the link below.</p>
+            <div class="download-button">
+                <a href="c:\Users\ASUS\Desktop\Riya Pandey c.v.pdf" download="c:\Users\ASUS\Desktop\Riya Pandey c.v.pdf">Download Resume</a>
+              </div>
+            </div>
+          </section>
+          <section class="contact" id="contact">
+            <u style="color:#ffffff;">
+                <h1 class="heading">Con<span>tact</span></h1>
+            </u>
+                <div class="contact-container">
+                  <div class="contact-left">
+                    <h2>Address</h2>
+                    <p>256-E Ahhilya Bai Holkar Nagar</p>
+                    <h2>Phone</h2>
+                    <p>8957812725</p>
+                    <h2>Email</h2>
+                    <p>riyapandey993518@gmail.com</p>
+                  </div>
+                  <div class="contact-right">
+                    <form>
+                      <input type="text" name="name" placeholder="Name">
+                      <input type="email" name="email" placeholder="Email">
+                      <textarea name="message" placeholder="Message"></textarea>
+                      <button type="submit">Send Message</button>
+                    </form>
+                  </div>
+                </div>
+              </section>
+           </body>
+        </html>
+        
